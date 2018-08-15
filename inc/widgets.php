@@ -14,5 +14,35 @@ function stanleywp_widgets_init() {
 		'before_title'  => '<h3 class="widget-title card-header">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'StanleyWP' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add widgets here.', 'StanleyWP' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'StanleyWP' ),
+		'id'            => 'footer-2',
+		'description'   => esc_html__( 'Add widgets here.', 'StanleyWP' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer 3', 'StanleyWP' ),
+		'id'            => 'footer-3',
+		'description'   => esc_html__( 'Add widgets here.', 'StanleyWP' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'stanleywp_widgets_init' );
