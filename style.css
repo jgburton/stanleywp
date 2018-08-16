@@ -7314,8 +7314,8 @@ a.text-dark:hover, a.text-dark:focus {
   display: inline; }
 
 .post {
-  margin-bottom: 4em;
-  padding-bottom: 1em; }
+  margin: 0;
+  padding: 2rem 0; }
 
 .post-thumbnail {
   margin-bottom: 1em; }
@@ -7385,6 +7385,11 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 0;
   padding: 6rem 0; }
   .blog-post:nth-child(odd) {
+    background-color: #f8f9fa; }
+
+.blog .post {
+  padding: 6rem 0; }
+  .blog .post:nth-child(odd) {
     background-color: #f8f9fa; }
 
 /*--------------------------------------------------------------
