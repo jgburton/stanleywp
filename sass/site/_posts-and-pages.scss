@@ -23,39 +23,39 @@
 
 .entry-meta,
 .entry-footer {
-  font-size: .75rem;
-  margin: .75em 0 2em;
+	font-size: .75rem;
+	margin: .75em 0 2em;
 
-  .svg-inline--fa {
-    color: $gray-600;
-    margin-right: .3em;
-  }
-  span {
-    margin: 0 1.5em .4em 0;
-    display: inline-block;
+	.svg-inline--fa {
+		color: $gray-600;
+		margin-right: .3em;
+	}
+	span {
+		margin: 0 1.5em .4em 0;
+		display: inline-block;
 
-    &:last-child {
-      margin: 0;
-    }
+		&:last-child {
+			margin: 0;
+		}
 
-    a {
-      text-decoration: none;
-      color: $gray-600;
+		a {
+			text-decoration: none;
+			color: $gray-600;
 
-      &:hover {
-        color: $gray-900;
-      }
-    }
-  }
+			&:hover {
+				color: $gray-900;
+			}
+		}
+	}
 	.edit-link {
 		.btn {
-      		color: $white;
+			color: $white;
 
-      	&:hover {
-	        color: $white
-	    }
+			&:hover {
+				color: $white
+			}
+		}
 	}
-  }
 }
 
 /* Posts Navigation */
@@ -73,9 +73,16 @@
 .error404 {
 	.content-area {
 		@include make-col-ready();
-		@include make-col(12);	
+		@include make-col(12);
 	}
 }
 
+.blog-post {
 
+	margin:0;
+	padding:6rem 0;
 
+	&:nth-child(odd) {
+		background-color: $gray-100;
+	}
+}
