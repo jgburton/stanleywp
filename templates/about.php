@@ -38,5 +38,29 @@ get_header(); ?>
 </div><!-- .about -->
 
 <?php
+// Grab the metadata from the database
+$leftcol = get_post_meta( get_the_ID(), '_stanleywp_left', true );
+$rightcol = get_post_meta( get_the_ID(), '_stanleywp_right', true );
+
+// Echo the metadata
+echo esc_html( $text );
+?>
+
+<div class="container">
+	<div class="row mt-5">
+		<div class="col-md-6">
+			<!-- <p>text left</p> -->
+			<?php echo wp_kses_post( $leftcol ); ?>
+		</div><!-- .col-md-6 -->
+		<div class="col-md-6">
+			<!-- <p>text right</p> -->
+			<?php echo wp_kses_post( $rightcol ); ?>
+		</div><!-- .col-md-6 -->
+	</div><!-- .row -->
+</div><!-- .container -->
+
+
+
+<?php
 // get_sidebar();
 get_footer();
