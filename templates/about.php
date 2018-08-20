@@ -46,7 +46,7 @@ $rightcol = get_post_meta( get_the_ID(), '_stanleywp_right', true );
 echo esc_html( $text );
 ?>
 
-<div class="container">
+<div class="container text-center">
 	<div class="row mt-5">
 		<div class="col-md-6">
 			<!-- <p>text left</p> -->
