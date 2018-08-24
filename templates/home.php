@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: About
+* Template Name: Home
 * The template for displaying all pages
 *
 * This is the template that displays all pages by default.
@@ -37,25 +37,37 @@ get_header(); ?>
 </div><!-- .container -->
 </div><!-- .banner -->
 
-<?php
-// Grab the metadata from the database
-$leftcol = get_post_meta( get_the_ID(), '_stanleywp_left', true );
-$rightcol = get_post_meta( get_the_ID(), '_stanleywp_right', true );
 
-// Echo the metadata
-echo esc_html( $text );
-?>
 
 <div class="container text-center">
 	<div class="row mt-5">
-		<div class="col-md-6">
-			<!-- <p>text left</p> -->
-			<?php echo wp_kses_post( $leftcol ); ?>
-		</div><!-- .col-md-6 -->
-		<div class="col-md-6">
-			<!-- <p>text right</p> -->
-			<?php echo wp_kses_post( $rightcol ); ?>
-		</div><!-- .col-md-6 -->
+		<?php
+
+		// the query
+		$args = array('post_type' => 'project');
+		$the_query = new WP_Query( $args ); ?>
+
+		<?php if ( $the_query->have_posts() ) : ?>
+
+			<!-- pagination here -->
+
+			<!-- the loop -->
+			<?php while ( $the_query->have_posts() ) : $the_query->the_post();
+
+				get_template_part( 'template-parts/content', 'projects' );
+ endwhile; ?>
+				</div><!--  .post-thumbnail -->
+
+
+			<!-- end of the loop -->
+
+			<!-- pagination here -->
+
+			<?php wp_reset_postdata(); ?>
+
+		<?php else : ?>
+			<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+		<?php endif; ?>
 	</div><!-- .row -->
 </div><!-- .container -->
 
